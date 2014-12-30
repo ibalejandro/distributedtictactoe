@@ -1,0 +1,205 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.1-b419 (branches/2.3.1.x-7937; 2014-08-04T08:11:03+0000) JAXWS-RI/2.2.10-b140803.1500 JAXWS-API/2.2.11 JAXB-RI/2.2.10-b140802.1033 JAXB-API/2.2.12-b140109.1041 svn-revision#unknown. --><xs:schema xmlns:tns="http://webservices/" xmlns:ns1="http://jaxb.dev.java.net/array" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://webservices/">
+
+<xs:import namespace="http://jaxb.dev.java.net/array" schemaLocation="http://localhost:8080/TriquiServer/TriquiWebService?xsd=2"/>
+
+<xs:element name="createRoom" type="tns:createRoom"/>
+
+<xs:element name="createRoomResponse" type="tns:createRoomResponse"/>
+
+<xs:element name="getGameBoard" type="tns:getGameBoard"/>
+
+<xs:element name="getGameBoardResponse" type="tns:getGameBoardResponse"/>
+
+<xs:element name="getPlayerInTurn" type="tns:getPlayerInTurn"/>
+
+<xs:element name="getPlayerInTurnResponse" type="tns:getPlayerInTurnResponse"/>
+
+<xs:element name="getPlayers" type="tns:getPlayers"/>
+
+<xs:element name="getPlayersResponse" type="tns:getPlayersResponse"/>
+
+<xs:element name="getRoomParticipants" type="tns:getRoomParticipants"/>
+
+<xs:element name="getRoomParticipantsResponse" type="tns:getRoomParticipantsResponse"/>
+
+<xs:element name="getRooms" type="tns:getRooms"/>
+
+<xs:element name="getRoomsResponse" type="tns:getRoomsResponse"/>
+
+<xs:element name="hello" type="tns:hello"/>
+
+<xs:element name="helloResponse" type="tns:helloResponse"/>
+
+<xs:element name="joinRoom" type="tns:joinRoom"/>
+
+<xs:element name="joinRoomResponse" type="tns:joinRoomResponse"/>
+
+<xs:element name="leaveRoom" type="tns:leaveRoom"/>
+
+<xs:element name="leaveRoomResponse" type="tns:leaveRoomResponse"/>
+
+<xs:element name="login" type="tns:login"/>
+
+<xs:element name="loginResponse" type="tns:loginResponse"/>
+
+<xs:element name="logout" type="tns:logout"/>
+
+<xs:element name="logoutResponse" type="tns:logoutResponse"/>
+
+<xs:element name="play" type="tns:play"/>
+
+<xs:element name="playAgain" type="tns:playAgain"/>
+
+<xs:element name="playAgainResponse" type="tns:playAgainResponse"/>
+
+<xs:element name="playResponse" type="tns:playResponse"/>
+
+<xs:complexType name="getPlayerInTurn">
+<xs:sequence>
+<xs:element name="gameCreator" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPlayerInTurnResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="joinRoom">
+<xs:sequence>
+<xs:element name="creator" type="xs:string" minOccurs="0"/>
+<xs:element name="joiner" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="joinRoomResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="leaveRoom">
+<xs:sequence>
+<xs:element name="creator" type="xs:string" minOccurs="0"/>
+<xs:element name="playerWantingToLeave" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="leaveRoomResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="login">
+<xs:sequence>
+<xs:element name="seudoname" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="loginResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getGameBoard">
+<xs:sequence>
+<xs:element name="gameCreator" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getGameBoardResponse">
+<xs:sequence>
+<xs:element name="return" type="ns1:intArray" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="play">
+<xs:sequence>
+<xs:element name="creator" type="xs:string" minOccurs="0"/>
+<xs:element name="userPlayed" type="xs:boolean"/>
+<xs:element name="posI" type="xs:int"/>
+<xs:element name="posJ" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="playResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createRoom">
+<xs:sequence>
+<xs:element name="seudoname" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createRoomResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getRoomParticipants">
+<xs:sequence>
+<xs:element name="creator" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getRoomParticipantsResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="logout">
+<xs:sequence>
+<xs:element name="logout" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="logoutResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="playAgain">
+<xs:sequence>
+<xs:element name="gameCreator" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="playAgainResponse">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getRooms">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getRoomsResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getPlayers">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="getPlayersResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="hello">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="helloResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
